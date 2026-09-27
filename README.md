@@ -12,9 +12,9 @@ The site URL is:
 
 The website files live directly at the repository root.
 
-## Before publishing
+## Current site
 
-Replace the two contact placeholders in `index.html` with the preferred LinkedIn URL and public email address.
+The portfolio includes direct links to LinkedIn, GitHub, email, and a print-friendly web résumé.
 
 Optional later upgrades:
 - custom domain such as `keshavramesh.com`;
