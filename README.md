@@ -20,7 +20,6 @@ Optional later upgrades:
 - custom domain such as `keshavramesh.com`;
 - headshot or custom portrait;
 - project screenshots;
-- downloadable resume;
 - writing / research section;
 - analytics;
 - light/dark theme toggle.
