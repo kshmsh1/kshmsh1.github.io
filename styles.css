@@ -59,7 +59,20 @@ nav { display: flex; gap: 28px; font-size: 13px; color: var(--muted); }
 nav a { transition: color .2s ease; }
 nav a:hover { color: var(--text); }
 
-.hero { padding: 88px 0 64px; min-height: calc(100vh - 82px); display: flex; flex-direction: column; justify-content: center; }
+.hero {
+  padding: 78px 0 64px;
+  min-height: calc(100vh - 82px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+  gap: 56px;
+  align-items: end;
+}
+.hero-main { min-width: 0; }
 .eyebrow, .section-index, .project-kicker, .timeline-date {
   font-family: "DM Mono", monospace;
   text-transform: uppercase;
@@ -75,9 +88,78 @@ nav a:hover { color: var(--text); }
   letter-spacing: -.075em;
   font-weight: 600;
 }
-.hero-copy { width: min(680px, 100%); font-size: clamp(18px, 2vw, 25px); color: #c7c6c2; margin: 0 0 32px; letter-spacing: -.02em; }
+.hero-copy {
+  width: min(720px, 100%);
+  font-size: clamp(18px, 2vw, 25px);
+  color: #c7c6c2;
+  margin: 0 0 32px;
+  letter-spacing: -.02em;
+}
+.builder-console {
+  background:
+    linear-gradient(rgba(184,255,100,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184,255,100,.035) 1px, transparent 1px),
+    var(--panel);
+  background-size: 24px 24px;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 70px rgba(0,0,0,.24);
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+}
+.console-head,
+.console-command {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.console-head {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+.status { color: var(--accent); display: inline-flex; align-items: center; gap: 7px; }
+.status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(184,255,100,.08);
+}
+.console-body { padding: 10px 16px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.console-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.console-row:last-child { border-bottom: 0; }
+.console-row span,
+.console-row strong {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+}
+.console-row span { color: #70757d; }
+.console-row strong { color: #d6d8da; font-weight: 400; }
+.console-command {
+  padding: 15px 16px;
+  border-top: 1px solid var(--line);
+  color: #bfc2c7;
+}
+.console-command span { color: var(--accent); margin-right: 8px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.button { padding: 13px 18px; border: 1px solid var(--line); font-size: 13px; transition: all .2s ease; }
+.button {
+  padding: 13px 18px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-family: "DM Mono", monospace;
+  letter-spacing: .02em;
+  transition: all .2s ease;
+}
 .button-primary { background: var(--accent); color: #0b0d10; border-color: var(--accent); font-weight: 700; }
 .button-primary:hover { transform: translateY(-2px); }
 .button-secondary:hover { border-color: #5d6269; }
@@ -115,7 +197,16 @@ nav a:hover { color: var(--text); }
 .terminal-card code::first-line { color: var(--accent); }
 
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
-.project-card { min-height: 300px; padding: 34px 34px 34px 0; border-bottom: 1px solid var(--line); }
+.project-card {
+  min-height: 300px;
+  padding: 34px 34px 34px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  transition: background .2s ease, transform .2s ease;
+}
+.project-card:hover {
+  background: linear-gradient(90deg, rgba(184,255,100,.025), transparent 65%);
+}
 .project-card:nth-child(odd) { border-right: 1px solid var(--line); padding-right: 42px; }
 .project-card:nth-child(even) { padding-left: 42px; }
 .project-card h3 { font-size: 26px; }
@@ -149,6 +240,8 @@ nav a:hover { color: var(--text); }
   nav { gap: 14px; }
   nav a:nth-child(2), nav a:nth-child(3) { display: none; }
   .hero { padding-top: 64px; min-height: auto; }
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .builder-console { min-height: 280px; }
   .hero h1 { font-size: clamp(64px, 20vw, 108px); }
   .hero-meta { grid-template-columns: 1fr; }
   .hero-meta > div + div { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
