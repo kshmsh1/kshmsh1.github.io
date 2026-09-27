@@ -14,7 +14,7 @@ The website files live directly at the repository root.
 
 ## Current site
 
-The portfolio includes direct links to LinkedIn, GitHub, email, and a print-friendly web résumé.
+The portfolio includes direct links to LinkedIn, GitHub, and email.
 
 Optional later upgrades:
 - custom domain such as `keshavramesh.com`;
