@@ -1,0 +1,8 @@
+{
+  "contract": "sports-terminal-static-nba-bundles-v1",
+  "algorithm": "fnv1a32",
+  "bucket_count": 512,
+  "file_count": 71100,
+  "uncompressed_bytes": 1558404257,
+  "compressed_bytes": 105917276
+}
