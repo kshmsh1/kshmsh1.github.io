@@ -1,6 +1,6 @@
 {
   "source_repository": "kshmsh1/sports-terminal",
-  "source_commit": "827a078fd7b2f3ee9e6504d0e1a4a7aa791dcb0c",
+  "source_commit": "b2b560e0e05200fd1c9ef5b212c0165c439e0f82",
   "base_href": "/sports-terminal/",
   "static_data_mode": "bundled-gzip-v1"
 }
