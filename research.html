@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Keshav Ramesh — methods, evaluation, and limitations of credit-risk machine-learning projects.">
+  <meta name="theme-color" content="#f9fafc">
+  <title>Credit Risk Projects — Keshav Ramesh</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Keshav Ramesh, homepage">KR<span class="brand-dot">.</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html#education">Education</a><a href="index.html#experience">Experience</a><a href="index.html#projects">Projects</a><a href="index.html#skills">Skills</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="section-shell research-hero">
+      <a class="research-back" href="index.html#projects">← Back to projects</a>
+      <h1>Credit risk &amp; machine learning</h1>
+      <p>Notes on the questions, methods, and limits of two academic projects. These were research and coursework projects—not deployed lending decision systems.</p>
+    </section>
+    <div class="section-shell">
+      <article id="bond-defaults" class="research-article">
+        <span class="project-kicker">Python · Statistical modeling · Credit risk</span>
+        <h2>Bond Default Prediction</h2>
+        <h3>Question</h3>
+        <p>Can observable bond characteristics help identify issuers or securities at risk of default? The project framed the question as predicting defaults within a 12-month horizon, with a focus on the difficulty of modeling infrequent outcomes.</p>
+        <h3>Data and features</h3>
+        <p>The academic study used historical U.S. corporate bond data spanning 2003–2023. Its source notebook describes a dataset drawn from WRDS, incorporating bond transaction and reference information. Features explored included credit ratings, yields, coupon characteristics, maturity, spreads, and issuance information.</p>
+        <h3>Approach</h3>
+        <ul>
+          <li>Prepare bond attributes, dates, categorical variables, and numeric features for classification.</li>
+          <li>Compare baseline and more flexible classifiers, including logistic, tree-based, and boosting approaches.</li>
+          <li>Consider precision, recall, F1, ROC-style diagnostics, and class distribution rather than treating accuracy as sufficient evidence of default-detection quality.</li>
+        </ul>
+        <h3>Interpretation and limits</h3>
+        <div class="research-note"><p>Default prediction is a rare-event problem: a high overall accuracy can coexist with weak identification of actual defaults. The original notebook is an academic exploratory analysis, and its metrics should not be interpreted as validated production underwriting performance.</p></div>
+        <p>A production-oriented follow-up would require explicit time-based out-of-sample testing, preprocessing fitted only on training folds, probability calibration, checks for target leakage, and monitoring of performance as credit conditions change. These are <strong>next steps</strong>, not claims about what was completed in the original project.</p>
+        <div class="project-links">
+          <a href="https://github.com/kshmsh1/bond-defaults" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+          <a href="https://github.com/kshmsh1/bond-defaults/blob/main/Final%20Project.pdf" target="_blank" rel="noopener noreferrer">Project report ↗</a>
+        </div>
+      </article>
+      <article id="credit-scores" class="research-article">
+        <span class="project-kicker">R · Feature engineering · Classification</span>
+        <h2>Credit Score Analysis</h2>
+        <h3>Question</h3>
+        <p>How well can statistical and machine-learning models classify credit-score categories using financial, economic, behavioral, and demographic inputs?</p>
+        <h3>Approach</h3>
+        <ul>
+          <li>Construct and transform candidate features; use principal component analysis (PCA) to examine data structure.</li>
+          <li>Compare penalized logistic regression (LASSO), decision trees, random forests, and neural networks.</li>
+          <li>Evaluate performance across modeling approaches rather than assuming a more complex model is always better.</li>
+        </ul>
+        <h3>Result and limits</h3>
+        <p>The project reported approximately <strong>0.89 accuracy</strong> for its random-forest classifier. That figure is a result from the academic dataset and evaluation setup—not a demonstrated underwriting approval, pricing, or default-loss metric.</p>
+        <p>For a real lending use case, important additional work would include examining class-specific errors, testing on a future time period, assessing calibration, reviewing bias and regulatory constraints, and measuring how model errors would affect business and customer outcomes.</p>
+        <div class="project-links"><a href="https://github.com/kshmsh1/Credit-Score-Analysis" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer"><span>© <span id="year">2026</span> Keshav Ramesh</span><div><a href="index.html#projects">Projects</a><a href="mailto:keshav.ramesh@gmail.com">Email</a><a href="https://github.com/kshmsh1" target="_blank" rel="noopener noreferrer">GitHub</a></div></footer>
+</body>
+</html>
